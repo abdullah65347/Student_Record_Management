@@ -106,10 +106,10 @@ public class Main {
 				System.out.println("************************PAYMENT******************************");
 				System.out.print("Enter StudentId: ");
 				int StudentId = sc.nextInt();
-				System.out.println("1.View pending fees"); // TO VIEW THE PENDING FEES AND MAKING PAYMENT
-				System.out.println("2.Do payment");
 				int choice;
 				do {
+					System.out.println("1.View pending fees"); // TO VIEW THE PENDING FEES AND MAKING PAYMENT
+					System.out.println("2.Do payment");
 					System.out.print("Please enter your choice here : ");
 					choice = sc.nextInt();
 					switch (choice) {
@@ -126,7 +126,10 @@ public class Main {
 					default:
 						System.err.println("***Wrong input please try again!***");
 					}
-				} while (choice > 2);
+					System.out.print("Do you want to continue payment? (y/n) : ");
+					n = sc.next();
+					System.out.println();
+				} while (!n.equals("n"));
 			}
 			if (option == 3) { // FETCHES ALL THE DATA ABOUT A STUDENT THAT WAS REGISTERED AT LATEST
 				System.out.println();
